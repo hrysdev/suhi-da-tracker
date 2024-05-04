@@ -2,10 +2,10 @@
   "manifest_version": 3,
   "name": "Sushida Tracker",
   "version": "0.0.1",
-  "description": "タイピングゲーム寿司打のスコアを集約し、成長を可視化するChromeの拡張機能",
+  "description": "寿司打のスコアを集約し、成長を可視化するChromeの拡張機能",
   "background": {
     "service_worker": "src/background.js",
     "type": "module"
   },
-  "permissions": ["tabs"]
+  "permissions": ["tabs", "webNavigation"]
 }
