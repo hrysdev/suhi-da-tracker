@@ -9,22 +9,26 @@
 //   }
 // }
 
-chrome.webNavigation.onHistoryStateUpdated.addListener((details) => {
-  console.log("hoge");
-});
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  var tabTitle = decodeURIComponent(changeInfo.title);
+  if (tabTitle !== undefined && tabTitle.indexOf("twitter.com/") > -1) {
+    var score = tabTitle.match(/★(\d,\d+)/)[1];
+    var speed = tabTitle.match(/速度：(\d+.\d+)/)[1];
+    var miss = tabTitle.match(/ミス：(\d+)/)[1];
+    var course = tabTitle.match(/(\d,\d+)円コース/)[1];
+    console.log(score, speed, miss, course);
+  }
 
-// chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-//   console.log(tabId);
-//   console.log(changeInfo.status);
-//   if (tab.url.indexOf("https://twitter.com/") > -1) {
-//     let url = decodeURIComponent(tab.url);
-//     console.log(url);
-//   }
-//   // ページのURLを取得
-//   // // URLからリザルト結果を抽出
-//   // const score = url.match(/★(\d,\d+)/)[1];
-//   // const speed = url.match(/速度：(\d+.\d+)/)[1];
-//   // const typo = url.match(/ミス：(\d+)/)[1];
-//   // const course = url.match(/(\d,\d+)円コース/)[1];
-//   // console.log(score, speed, typo, course);
-// });
+  // if (tabTitle.search(\https://twitter.com/*寿司打\g) > -1) {
+  //   console.log("hoge");
+  // }
+  // if (changeInfo.title.indexOf("https://twitter.com/") > -1) {
+  //   console.log(changeInfo.title);
+  // }
+  // if (tabTitle.indexOf("https://twitter.com/") > -1) {
+  //   // let url = decodeURIComponent(tab.url);
+  //   console.log(tab);
+  // }
+  //   // ページのURLを取得
+  //   // // URLからリザルト結果を抽出
+});
