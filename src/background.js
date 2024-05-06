@@ -13,11 +13,24 @@ chrome.webNavigation.onCompleted.addListener((details) => {
   if (details.url.indexOf("https://twitter.com/") > -1) {
     var url = decodeURIComponent(details.url);
 
-    var score = url.match(/(\d,\d+)円/);
+    var score = url.match(/★(\d,\d+)円/)[1];
     var speed = url.match(/速度：(\d+.\d+)/)[1];
     var miss = url.match(/ミス：(\d+)/)[1];
     var course = url.match(/(\d,\d+)円コース/)[1];
 
-    console.log(score, speed, miss, course);
+    console.log(details.tabId, score, speed, miss, course);
+
+    // var key = details.tabId;
+    var value = score;
+
+    chrome.storage.local.clear();
+
+    chrome.storage.local.set({ key: value }, () => {
+      console.log("Value is set");
+    });
+
+    chrome.storage.local.get(["key"], (result) => {
+      console.log("Value is " + result.key);
+    });
   }
 });
