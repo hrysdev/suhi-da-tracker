@@ -7,5 +7,6 @@
     "service_worker": "src/background.js",
     "type": "module"
   },
-  "permissions": ["webNavigation", "storage", "unlimitedStorage"]
+  "action": {},
+  "permissions": ["webNavigation", "storage", "unlimitedStorage", "tabs"]
 }
