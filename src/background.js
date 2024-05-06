@@ -20,17 +20,22 @@ chrome.webNavigation.onCompleted.addListener((details) => {
 
     console.log(details.tabId, score, speed, miss, course);
 
-    // var key = details.tabId;
+    var key = details.tabId.toString();
     var value = score;
 
-    chrome.storage.local.clear();
+    // chrome.storage.local.clear();
 
-    chrome.storage.local.set({ key: value }, () => {
-      console.log("Value is set");
-    });
+    // chrome.storage.local.set({ [key]: value }, () => {
+    //   console.log("Value is set");
+    // });
 
-    chrome.storage.local.get(["key"], (result) => {
-      console.log("Value is " + result.key);
+    chrome.storage.local.get(null, (result) => {
+      console.log(result);
     });
   }
+});
+
+chrome.action.onClicked.addListener(() => {
+  // prettier-ignore
+  chrome.tabs.create({ "url": "src/index.html" });
 });
