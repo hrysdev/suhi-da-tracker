@@ -1,16 +1,16 @@
 // https://twitter.com/*%E5%AF%BF%E5%8F%B8%E6%89%93
 
-class GameScore {
-  private url: string;
+// class GameScore {
+//   private url: string;
 
-  constructor(url: string) {
-    this.url = url;
-  }
+//   constructor(url: string) {
+//     this.url = url;
+//   }
 
-  public function extractScore(url: string): void {
-    console.log(url.match(/★(\d,\d+)円/));
-  }  
-}
+//   public function extractScore(url: string): void {
+//     console.log(url.match(/★(\d,\d+)円/));
+//   }  
+// }
 
 chrome.webNavigation.onCompleted.addListener((details) => {
   if (details.url.indexOf("https://twitter.com/") > -1) {
