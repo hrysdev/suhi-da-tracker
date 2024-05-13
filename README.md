@@ -8,6 +8,15 @@
 git clone https://github.com/hrysdev/sushida-tracker.git
 ```
 
+```
+npm install
+```
+
+```
+// うまくいっていない...
+npm run build
+```
+
 <!--
 node: v22.1.0
 npm: v10.7.0
