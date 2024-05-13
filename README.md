@@ -13,7 +13,6 @@ npm install
 ```
 
 ```
-// うまくいっていない...
 npm run build
 ```
 
