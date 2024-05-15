@@ -9,22 +9,26 @@
 
 //   public function extractScore(url: string): void {
 //     console.log(url.match(/★(\d,\d+)円/));
-//   }  
+//   }
 // }
 
 chrome.webNavigation.onCompleted.addListener((details) => {
   if (details.url.indexOf("https://twitter.com/") > -1) {
-    var url = decodeURIComponent(details.url);
+    const url = decodeURIComponent(details.url);
 
-    var score = url.match(/★(\d,\d+)円/)[1];
-    var speed = url.match(/速度：(\d+.\d+)/)[1];
-    var miss = url.match(/ミス：(\d+)/)[1];
-    var course = url.match(/(\d,\d+)円コース/)[1];
+    try {
+      const score = url.match(/★(\d,\d+)円/)[1];
+      const speed = url.match(/速度：(\d+.\d+)/)[1];
+      const miss = url.match(/ミス：(\d+)/)[1];
+      const course = url.match(/(\d,\d+)円コース/)[1];
 
-    console.log(details.tabId, score, speed, miss, course);
+      console.log(details.tabId, score, speed, miss, course);
+    } catch {
+      throw new Error();
+    }
 
-    var key = details.tabId.toString();
-    var value = score;
+    // const key = details.tabId.toString();
+    // const value = score;
 
     // chrome.storage.local.clear();
 
@@ -32,9 +36,9 @@ chrome.webNavigation.onCompleted.addListener((details) => {
     //   console.log("Value is set");
     // });
 
-    chrome.storage.local.get(null, (result) => {
-      console.log(result);
-    });
+    // chrome.storage.local.get(null, (result) => {
+    //   console.log(result);
+    // });
   }
 });
 
