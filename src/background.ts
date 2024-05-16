@@ -1,20 +1,34 @@
 // https://twitter.com/*%E5%AF%BF%E5%8F%B8%E6%89%93
 
 class GameScore {
-  private url: string;
+  private readonly url: string;
 
   constructor(url: string) {
-    if(typeof url !== "string") {
-      throw new Error;
+    if (typeof url !== "string") {
+      throw new Error();
     }
 
     this.url = url;
   }
 
-  public function extractScore(url: string): void {
-    console.log(url.match(/★(\d,\d+)円/));
+  public extractScoreByURL(url: string): string {
+    return url.match(/★(\d,\d+)円/);
+  }
+
+  public extractSpeedByURL(url: string): string {
+    return url.match(/★(\d,\d+)円/);
+  }
+
+  public extractTypoByURL(url: string): string {
+    return url.match(/★(\d,\d+)円/);
+  }
+
+  public extractLevelByURL(url: string): string {
+    return url.match(/★(\d,\d+)円/);
   }
 }
+
+const gameScore = new GameScore("https://twitter.com/");
 
 chrome.webNavigation.onCompleted.addListener((details) => {
   if (details.url.indexOf("https://twitter.com/") > -1) {
