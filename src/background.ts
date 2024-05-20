@@ -1,5 +1,9 @@
 // https://twitter.com/*%E5%AF%BF%E5%8F%B8%E6%89%93
 
+class tabUrl {
+  private readonly url: string;
+}
+
 class GameScore {
   private readonly url: string;
 
@@ -12,19 +16,19 @@ class GameScore {
   }
 
   public extractScoreByURL(url: string): string {
-    return url.match(/★(\d,\d+)円/);
+    return url.match(/★(\d,\d+)円/)[1];
   }
 
   public extractSpeedByURL(url: string): string {
-    return url.match(/★(\d,\d+)円/);
+    return url.match(/速度：(\d+.\d+)/)[1];
   }
 
   public extractTypoByURL(url: string): string {
-    return url.match(/★(\d,\d+)円/);
+    return url.match(/ミス：(\d+)/)[1];
   }
 
   public extractLevelByURL(url: string): string {
-    return url.match(/★(\d,\d+)円/);
+    return url.match(/(\d,\d+)円コース/)[1];
   }
 }
 
