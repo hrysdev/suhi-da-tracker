@@ -9,6 +9,10 @@ git clone https://github.com/hrysdev/sushida-tracker.git
 ```
 
 ```
+npm init
+```
+
+```
 npm install
 ```
 
