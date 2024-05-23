@@ -1,13 +1,13 @@
 {
   "name": "sushida-tracker",
   "version": "0.0.1",
-  "description": "寿司打のスコアを集約し、成長を可視化する Chrome の拡張機能",
-  "main": "background.js",
+  "description": "🍣 寿司打のスコアを集約し、成長を可視化するChromeの拡張機能",
+  "main": "src/background.ts",
   "scripts": {
-    "built": "tsc",
-    "prepublishOnly": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
-  "author": "",
+  "author": "HrysDev",
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.268",
