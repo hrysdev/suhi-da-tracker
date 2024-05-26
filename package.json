@@ -10,6 +10,7 @@
   "author": "HrysDev",
   "license": "MIT",
   "devDependencies": {
+    "@types/chart.js": "^2.9.41",
     "@types/chrome": "^0.0.268",
     "typescript": "^5.4.5"
   }
