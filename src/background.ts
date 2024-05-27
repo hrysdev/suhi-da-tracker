@@ -1,7 +1,3 @@
-// https://twitter.com/*%E5%AF%BF%E5%8F%B8%E6%89%93
-
-// const gameScore = new GameScore("https://x.com/");
-
 chrome.webNavigation.onCompleted.addListener((details) => {
   if (details.url.indexOf("https://x.com/") > -1) {
     const url = decodeURIComponent(details.url).replaceAll(",", "");
