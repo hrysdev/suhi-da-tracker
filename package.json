@@ -13,5 +13,8 @@
     "@types/chart.js": "^2.9.41",
     "@types/chrome": "^0.0.268",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.3"
   }
 }
