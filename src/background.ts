@@ -18,12 +18,12 @@ chrome.webNavigation.onCompleted.addListener((details) => {
     chrome.storage.local.set({ [key]: value }, () => {
       console.log("Value is set");
     });
-
-    chrome.storage.local.get(null, (result) => {
-      console.log(result);
-      chrome.runtime.sendMessage(result);
-    });
   }
+});
+
+chrome.storage.local.get(null, (result) => {
+  console.log(result);
+  chrome.runtime.sendMessage(result);
 });
 
 chrome.action.onClicked.addListener(() => {
