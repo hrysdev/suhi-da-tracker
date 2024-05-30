@@ -5,9 +5,13 @@ const path = require("path");
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
-  entry: "./src/index.ts",
+  entry: {
+    main: path.join(__dirname, "src/index.ts"),
+    background: path.join(__dirname, "src/background.ts"),
+  },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    filename: "[name].js",
+    path: path.join(__dirname, "dist/"),
   },
   plugins: [
     // Add your plugins here
