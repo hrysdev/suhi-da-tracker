@@ -28,5 +28,5 @@ chrome.storage.local.get(null, (result) => {
 
 chrome.action.onClicked.addListener(() => {
   // prettier-ignore
-  chrome.tabs.create({ "url": "src/index.html" });
+  chrome.tabs.create({ "url": "index.html" });
 });
