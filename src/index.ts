@@ -17,8 +17,6 @@ if (ctx) {
   });
 }
 
-console.log("hoge");
-
 chrome.runtime.onMessage.addListener((message) => {
   console.log(message);
 });
