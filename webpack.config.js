@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
   entry: {
-    main: path.join(__dirname, "src/index.ts"),
+    content: path.join(__dirname, "src/content.ts"),
     background: path.join(__dirname, "src/background.ts"),
   },
   output: {
