@@ -30,5 +30,3 @@ chrome.action.onClicked.addListener(() => {
   // prettier-ignore
   chrome.tabs.create({ "url": "index.html" });
 });
-
-console.log("hogehoge");
