@@ -17,6 +17,7 @@ if (ctx) {
   });
 }
 
-chrome.runtime.onMessage.addListener((message) => {
-  console.log(message);
+chrome.storage.local.get(null, (result) => {
+  console.log(result);
+  chrome.runtime.sendMessage(result);
 });

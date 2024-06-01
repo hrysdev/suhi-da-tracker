@@ -21,11 +21,6 @@ chrome.webNavigation.onCompleted.addListener((details) => {
   }
 });
 
-chrome.storage.local.get(null, (result) => {
-  console.log(result);
-  chrome.runtime.sendMessage(result);
-});
-
 chrome.action.onClicked.addListener(() => {
   // prettier-ignore
   chrome.tabs.create({ "url": "index.html" });
