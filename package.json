@@ -1,5 +1,5 @@
 {
-  "name": "sushida-tracker",
+  "name": "Sushi-Da Tracker",
   "version": "0.0.1",
   "description": "🍣 寿司打のスコアを集約し、成長を可視化するChromeの拡張機能",
   "main": "src/background.ts",

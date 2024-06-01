@@ -1,4 +1,4 @@
-# Sushida Tracker
+# Sushi-Da Tracker
 
 タイピングゲーム寿司打のスコアから、成長を可視化する Chrome 拡張機能
 
