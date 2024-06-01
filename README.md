@@ -1,4 +1,4 @@
-# Sushida Visualizer
+# Sushida Tracker
 
 タイピングゲーム寿司打のスコアから、成長を可視化する Chrome 拡張機能
 
