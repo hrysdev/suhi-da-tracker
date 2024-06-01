@@ -8,7 +8,7 @@ const dummyData = {
   5: { score: "4400", speed: "4.5", date: "2024-01-05" },
 };
 
-type Item = {
+type ResultProp = {
   score: string;
   speed: string;
   date: string;
@@ -16,7 +16,8 @@ type Item = {
 
 chrome.storage.local.get(null, (result) => {
   console.log(result);
-  const values: Item[] = Object.values(dummyData);
+
+  const values: ResultProp[] = Object.values(dummyData);
 
   const ctx = document.getElementById("myChart") as HTMLCanvasElement;
   if (ctx) {
