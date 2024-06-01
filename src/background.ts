@@ -11,12 +11,19 @@ chrome.webNavigation.onCompleted.addListener((details) => {
     console.log(details.tabId, score, speed, miss, course);
 
     const key = details.tabId.toString();
-    const value = score;
+    const value = {
+      score: score,
+      speed: speed,
+    };
 
     // chrome.storage.local.clear();
 
     chrome.storage.local.set({ [key]: value }, () => {
       console.log("Value is set");
+    });
+
+    chrome.storage.local.get(null, (result) => {
+      console.log(result);
     });
   }
 });
