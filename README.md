@@ -1,11 +1,11 @@
-# Sushida Tracker
+# Sushida Visualizer
 
 タイピングゲーム寿司打のスコアから、成長を可視化する Chrome 拡張機能
 
 ## Usage
 
 ```
-git clone https://github.com/hrysdev/sushida-tracker.git
+git clone https://github.com/hrysdev/sushida-visualizer.git
 ```
 
 ```
