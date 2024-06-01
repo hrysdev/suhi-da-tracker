@@ -1,4 +1,4 @@
-class OverPayment {
+class Overpayment {
   static readonly MIN_AMOUNT: number = 0;
 
   amount: number;
