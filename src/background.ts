@@ -30,5 +30,5 @@ chrome.webNavigation.onCompleted.addListener((details) => {
 
 chrome.action.onClicked.addListener(() => {
   // prettier-ignore
-  chrome.tabs.create({ "url": "index.html" });
+  chrome.tabs.create({ "url": "src/index.html" });
 });

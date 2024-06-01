@@ -1,4 +1,4 @@
-class Overpayment {
+export class OverPayment {
   static readonly MIN_AMOUNT: number = 0;
 
   amount: number;
