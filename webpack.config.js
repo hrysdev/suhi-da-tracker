@@ -6,8 +6,9 @@ const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
   entry: {
-    content: path.join(__dirname, "src/content.ts"),
     background: path.join(__dirname, "src/background.ts"),
+    index: path.join(__dirname, "src/index.ts"),
+    overPayment: path.join(__dirname, "src/overPayment.ts"),
   },
   output: {
     filename: "[name].js",
