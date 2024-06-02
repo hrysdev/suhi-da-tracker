@@ -8,7 +8,6 @@ const config = {
   entry: {
     background: path.join(__dirname, "src/background.ts"),
     index: path.join(__dirname, "src/index.ts"),
-    overPayment: path.join(__dirname, "src/overPayment.ts"),
   },
   output: {
     filename: "[name].js",
