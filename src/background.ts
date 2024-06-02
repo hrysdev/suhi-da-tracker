@@ -1,7 +1,3 @@
-import { OverPayment } from "./overPayment";
-
-// chrome.storage.local.clear();
-
 function matchOrZero(input: string, regex: RegExp): number {
   const matchResult = input.match(regex);
   return matchResult ? Number(matchResult[1]) : 0;
@@ -12,7 +8,7 @@ chrome.webNavigation.onCompleted.addListener((details) => {
     const url = decodeURIComponent(details.url).replaceAll(",", "");
 
     const overPaymentRegex = /★(\d+)円/;
-    const overPayment = new OverPayment(matchOrZero(url, overPaymentRegex));
+    const overPayment = matchOrZero(url, overPaymentRegex);
 
     const speedRegex = /速度：(\d+.\d+)/;
     const speed = matchOrZero(url, speedRegex);
@@ -25,7 +21,7 @@ chrome.webNavigation.onCompleted.addListener((details) => {
 
     const key = details.tabId.toString();
     const value = {
-      score: overPayment.amount,
+      score: overPayment,
       speed: speed,
       date: date,
     };
@@ -43,3 +39,5 @@ chrome.webNavigation.onCompleted.addListener((details) => {
 chrome.action.onClicked.addListener(() => {
   chrome.tabs.create({ url: "src/index.html" });
 });
+
+// chrome.storage.local.clear();
