@@ -1,3 +1,9 @@
+class CurrentDate {
+  constructor() {
+    console.log("hoge");
+  }
+}
+
 function getCurrentDate(): string {
   const today: Date = new Date();
 
@@ -48,7 +54,7 @@ chrome.webNavigation.onCompleted.addListener((details) => {
 });
 
 chrome.action.onClicked.addListener(() => {
-  chrome.tabs.create({ url: "src/index.html" });
+  chrome.tabs.create({ url: "index.html" });
 });
 
 // chrome.storage.local.clear();
