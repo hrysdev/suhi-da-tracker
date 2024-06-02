@@ -72,9 +72,6 @@ chrome.storage.local.get(null, (result) => {
       ],
     },
     options: {
-      hover: {
-        mode: "index",
-      },
       scales: {},
     },
   });
