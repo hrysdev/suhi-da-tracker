@@ -1,2 +1,7 @@
-!/dist/**/.gitkeep
+# npmパッケージ
 node_modules/
+
+# 拡張機能本体のjsフォルダ
+dist/*
+!dist/.gitkeep
+!dist/manifest.json
