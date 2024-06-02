@@ -4,4 +4,5 @@ node_modules/
 # 拡張機能本体のjsフォルダ
 dist/*
 !dist/.gitkeep
+!dist/index.html
 !dist/manifest.json
