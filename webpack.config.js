@@ -1,21 +1,23 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
   entry: {
-    background: path.join(__dirname, "src/background.ts"),
-    index: path.join(__dirname, "src/index.ts"),
+    index: "./src/index.ts",
+    background: "./src/background.ts",
   },
   output: {
+    path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
-    path: path.join(__dirname, "dist/"),
   },
   plugins: [
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new CopyPlugin({ patterns: [{ from: ".", to: ".", context: "public" }] }),
   ],
   module: {
     rules: [
