@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "chart.js": "^4.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.23",
+    "@types/chart.js": "^2.9.41",
     "@types/chrome": "^0.0.268",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
