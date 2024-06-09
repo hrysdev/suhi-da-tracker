@@ -1,7 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import { Chart } from "chart.js/auto";
+import { LineChart, Line } from "recharts";
 
 const dummyData = {
   1: {
@@ -55,37 +55,21 @@ type TypingProp = {
   typingDate: string;
 };
 
-chrome.storage.local.get(null, (result) => {
-  console.log(result);
-  const typingProp: TypingProp[] = Object.values(dummyData);
+// chrome.storage.local.get(null, (result) => {
+//   const typingProp: TypingProp[] = Object.values(dummyData);
+// });
 
-  const ctx = document.getElementById("myChart") as HTMLCanvasElement;
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: typingProp.map((row) => row.typingDate),
-      datasets: [
-        {
-          label: "お勧め5,000円コース",
-          data: typingProp.map((row) => row.typingOverPayment),
-          borderColor: "rgb(75, 192, 192)",
-          backgroundColor: "rgb(75, 192, 192)",
-          tension: 0.2,
-        },
-      ],
-    },
-    options: {
-      scales: {},
-    },
-  });
-});
+const typingProp: TypingProp[] = Object.values(dummyData);
+console.log(typingProp);
 
-function App() {
+export function App() {
   return (
     <>
       <h1>Sushi-Da Tracker</h1>
+      <LineChart width={400} height={400} data={typingProp}>
+        <Line type="monotone" dataKey="typingOverPayment" stroke="#8884d8" />
+      </LineChart>
+      <footer>© 2024 HrysDev.</footer>
     </>
   );
 }
-
-export default App;
