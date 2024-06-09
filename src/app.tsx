@@ -1,6 +1,6 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// import { useState } from "react";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
 import { LineChart, Line } from "recharts";
 
 const dummyData = {
@@ -62,7 +62,7 @@ type TypingProp = {
 const typingProp: TypingProp[] = Object.values(dummyData);
 console.log(typingProp);
 
-export function App() {
+export default function App() {
   return (
     <>
       <h1>Sushi-Da Tracker</h1>
