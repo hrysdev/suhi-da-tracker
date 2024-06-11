@@ -1,26 +1,32 @@
 {
   "name": "sushi-da-tracker",
+  "private": true,
   "version": "0.0.1",
-  "description": "🍣 寿司打のスコアを集約し、成長を可視化するChromeの拡張機能",
-  "main": "src/background.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "watch": "webpack --watch --mode=production"
-  },
-  "author": "HrysDev",
-  "license": "MIT",
-  "devDependencies": {
-    "@extend-chrome/storage": "^1.5.0",
-    "@types/chart.js": "^2.9.41",
-    "@types/chrome": "^0.0.268",
-    "copy-webpack-plugin": "^12.0.2",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.4.5",
-    "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "chart.js": "^4.4.3"
+    "@extend-chrome/storage": "^1.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.23",
+    "@types/chrome": "^0.0.268",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
   }
 }
