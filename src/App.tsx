@@ -1,7 +1,6 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import { LineChart, Line } from "recharts";
+import ButtonAppbar from "./components/ButtonAppBar";
+import TemporaryDrawer from "./components/TemporaryDrawer";
 
 const dummyData = {
   1: {
@@ -65,7 +64,8 @@ console.log(typingProp);
 export default function App() {
   return (
     <>
-      <h1>Sushi-Da Tracker</h1>
+      <ButtonAppbar />
+      <TemporaryDrawer />
       <LineChart width={400} height={400} data={typingProp}>
         <Line type="monotone" dataKey="typingOverPayment" stroke="#8884d8" />
       </LineChart>
