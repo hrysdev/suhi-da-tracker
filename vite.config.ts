@@ -4,7 +4,7 @@ import { crx, defineManifest } from "@crxjs/vite-plugin";
 
 const manifest = defineManifest({
   manifest_version: 3,
-  name: "Sushi-Da Tracker",
+  name: "寿司打トラッカー",
   version: "0.0.1",
   description: "寿司打のスコアを集約し、成長を可視化する Chrome の拡張機能",
   background: {
