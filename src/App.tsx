@@ -1,6 +1,6 @@
 import { LineChart, Line } from "recharts";
-import ButtonAppbar from "./components/ButtonAppBar";
-import TemporaryDrawer from "./components/TemporaryDrawer";
+import ButtonAppBar from "./components/ButtonAppBar";
+import PersistentDrawerLeft from "./components/PersistentDrawer";
 
 const dummyData = {
   1: {
@@ -59,13 +59,12 @@ type TypingProp = {
 // });
 
 const typingProp: TypingProp[] = Object.values(dummyData);
-console.log(typingProp);
 
 export default function App() {
   return (
     <>
-      <ButtonAppbar />
-      <TemporaryDrawer />
+      <ButtonAppBar />
+      <PersistentDrawerLeft />
       <LineChart width={400} height={400} data={typingProp}>
         <Line type="monotone" dataKey="typingOverPayment" stroke="#8884d8" />
       </LineChart>
