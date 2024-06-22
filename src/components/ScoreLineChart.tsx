@@ -46,14 +46,21 @@ type TypingProp = {
   typingDate: string;
 };
 
-const boxWidth = 500;
-const boxHeight = 300;
+const boxWidth = 800;
+const boxHeight = 400;
 
-export default function ScoreLineChart() {
+// TODO: 難易度別にグラフを切り替えるために、useStateで状態を管理する。
+export default function OverPaymentLineChart() {
   const typingProp: TypingProp[] = Object.values(data);
 
   return (
     <LineChart
+      xAxis={[
+        {
+          scaleType: "point",
+          data: typingProp.map((item) => item.typingDate),
+        },
+      ]}
       series={[
         {
           data: typingProp.map((item) => item.typingOverPayment),
