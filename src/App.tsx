@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
+import Typography from "@mui/material/Typography";
 import ScoreLineChart from "./components/ScoreLineChart";
 
 // chrome.storage.local.get(null, (result) => {
@@ -20,6 +21,7 @@ export default function App() {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Typography variant="h1">寿司打トラッカー</Typography>
         <ScoreLineChart />
       </ThemeProvider>
     </React.Fragment>
