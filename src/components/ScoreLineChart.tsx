@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import { LineChart } from "@mui/x-charts";
 
 const data = {
@@ -47,20 +46,21 @@ type TypingProp = {
   typingDate: string;
 };
 
-export default function OverPaymentLineChart() {
+const boxWidth = 500;
+const boxHeight = 300;
+
+export default function ScoreLineChart() {
   const typingProp: TypingProp[] = Object.values(data);
 
   return (
-    <Box sx={{ mx: 1, borderRadius: 1 }}>
-      <LineChart
-        series={[
-          {
-            data: typingProp.map((item) => item.typingOverPayment),
-          },
-        ]}
-        width={500}
-        height={300}
-      />
-    </Box>
+    <LineChart
+      series={[
+        {
+          data: typingProp.map((item) => item.typingOverPayment),
+        },
+      ]}
+      width={boxWidth}
+      height={boxHeight}
+    />
   );
 }
