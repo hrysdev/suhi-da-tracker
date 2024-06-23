@@ -2,9 +2,8 @@ import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import ScoreLineChart from "./components/ScoreLineChart";
-import CourseButton from "./components/CourseButton";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Divider from "@mui/material/Divider";
 
 // chrome.storage.local.get(null, (result) => {
 //   const typingProp: TypingProp[] = Object.values(dummyData);
@@ -23,7 +22,7 @@ export default function App() {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Divider />
+        <Header />
         <ScoreLineChart />
         <Footer />
       </ThemeProvider>
