@@ -50,7 +50,7 @@ const boxWidth = 800;
 const boxHeight = 400;
 
 // TODO: 難易度別にグラフを切り替えるために、useStateで状態を管理する。
-export default function OverPaymentLineChart() {
+export default function ScoreLineChart() {
   const typingProp: TypingProp[] = Object.values(data);
 
   return (
