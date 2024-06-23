@@ -37,6 +37,12 @@ const data = {
     typingRate: 4.1,
     typingDate: "2024-01-06",
   },
+  7: {
+    typingCourse: 5000,
+    typingOverPayment: 4000,
+    typingRate: 4.2,
+    typingDate: "2024-01-07",
+  },
 };
 
 type TypingProp = {
