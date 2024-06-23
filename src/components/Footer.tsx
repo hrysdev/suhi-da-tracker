@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 
 export default function Footer() {
   return (
-    <Stack direction="column">
+    <Stack direction="column" alignItems="center">
       <IconButton href="https://github.com/hrysdev/sushi-da-tracker">
         <GitHubIcon />
       </IconButton>
