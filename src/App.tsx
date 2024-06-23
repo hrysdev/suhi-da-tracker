@@ -1,4 +1,3 @@
-import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import ScoreLineChart from "./components/ScoreLineChart";
@@ -20,15 +19,13 @@ export default function App() {
   });
 
   return (
-    <React.Fragment>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Stack direction="column" alignItems="center">
-          <Header />
-          <ScoreLineChart />
-          <Footer />
-        </Stack>
-      </ThemeProvider>
-    </React.Fragment>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Stack direction="column" alignItems="center">
+        <Header />
+        <ScoreLineChart />
+        <Footer />
+      </Stack>
+    </ThemeProvider>
   );
 }
