@@ -3,6 +3,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
+// TODO: ボタンではなく、タブにする
+// 参考URL: https://mui.com/material-ui/react-tabs/
 export default function Header() {
   return (
     <Stack direction="column" alignItems="center">
