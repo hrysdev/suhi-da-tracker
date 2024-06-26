@@ -1,0 +1,86 @@
+export const data = {
+  1: {
+    typingCourse: 5000,
+    typingOverPayment: 3000,
+    typingRate: 4.1,
+    typingDate: "2024-01-01",
+  },
+  2: {
+    typingCourse: 3000,
+    typingOverPayment: 3200,
+    typingRate: 4.2,
+    typingDate: "2024-01-02",
+  },
+  3: {
+    typingCourse: 10000,
+    typingOverPayment: 3500,
+    typingRate: 4.3,
+    typingDate: "2024-01-03",
+  },
+  4: {
+    typingCourse: 5000,
+    typingOverPayment: 3900,
+    typingRate: 4.4,
+    typingDate: "2024-01-04",
+  },
+  5: {
+    typingCourse: 3000,
+    typingOverPayment: 4400,
+    typingRate: 4.5,
+    typingDate: "2024-01-05",
+  },
+  6: {
+    typingCourse: 10000,
+    typingOverPayment: 5000,
+    typingRate: 4.1,
+    typingDate: "2024-01-06",
+  },
+  7: {
+    typingCourse: 3000,
+    typingOverPayment: 4000,
+    typingRate: 4.2,
+    typingDate: "2024-01-07",
+  },
+  8: {
+    typingCourse: 10000,
+    typingOverPayment: 4200,
+    typingRate: 4.3,
+    typingDate: "2024-01-08",
+  },
+  9: {
+    typingCourse: 5000,
+    typingOverPayment: 4500,
+    typingRate: 4.4,
+    typingDate: "2024-01-09",
+  },
+  10: {
+    typingCourse: 5000,
+    typingOverPayment: 4900,
+    typingRate: 4.5,
+    typingDate: "2024-01-10",
+  },
+  11: {
+    typingCourse: 3000,
+    typingOverPayment: 5500,
+    typingRate: 4.1,
+    typingDate: "2024-01-11",
+  },
+  12: {
+    typingCourse: 5000,
+    typingOverPayment: 6000,
+    typingRate: 4.2,
+    typingDate: "2024-01-12",
+  },
+  13: {
+    typingCourse: 10000,
+    typingOverPayment: 7000,
+    typingRate: 4.3,
+    typingDate: "2024-01-13",
+  },
+  14: {
+    typingCourse: 5000,
+    typingOverPayment: 8000,
+    typingRate: 4.4,
+    typingDate: "2024-01-14",
+  },
+};
