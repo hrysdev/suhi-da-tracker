@@ -1,8 +1,9 @@
 import React from "react";
 import { useMediaQuery, createTheme, ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
-import ScoreLineChart from "./components/ScoreLineChart";
+import Nav from "./components/Nav";
 import Header from "./components/Header";
+import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Stack from "@mui/material/Stack";
 
@@ -26,9 +27,10 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Nav />
       <Stack direction="column" alignItems="center">
         <Header />
-        <ScoreLineChart />
+        <Main />
         <Footer />
       </Stack>
     </ThemeProvider>
