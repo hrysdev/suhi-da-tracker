@@ -6,16 +6,29 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Sidebar from "./Sidebar";
+import { useState } from "react";
 
 export default function Nav() {
+  const [open, setOpen] = useState(false);
+
+  const handleDrawer = (newOpen: boolean) => {
+    setOpen(newOpen);
+  };
+
   return (
     <Box>
       <AppBar position="static">
         <Toolbar>
-          <IconButton size="large" edge="start" sx={{ mr: 2 }}>
+          <IconButton
+            onClick={() => handleDrawer(true)}
+            size="large"
+            edge="start"
+            sx={{ mr: 2 }}
+          >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
             寿司打トラッカー
           </Typography>
           <IconButton size="large">
@@ -26,6 +39,7 @@ export default function Nav() {
           </IconButton>
         </Toolbar>
       </AppBar>
+      <Sidebar open={open} handleDrawer={handleDrawer} />
     </Box>
   );
 }
