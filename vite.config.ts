@@ -8,13 +8,13 @@ const manifest = defineManifest({
   version: "0.0.1",
   description: "寿司打のスコアを集約し、成長を可視化する Chrome の拡張機能",
   background: {
-    service_worker: "src/background.tsx",
+    service_worker: "src/background/background.tsx",
     type: "module",
   },
   content_scripts: [
     {
       matches: ["https://sushida.net/play.html"],
-      js: ["src/content.tsx"],
+      js: ["src/content/content.tsx"],
     },
   ],
   action: {},
