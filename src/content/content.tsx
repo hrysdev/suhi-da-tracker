@@ -3,13 +3,11 @@ const gl = canvas.getContext("webgl2");
 const bufferCanvas = document.createElement("canvas");
 const bufferCtx = bufferCanvas.getContext("2d");
 
+if (!gl) {
+  throw new Error("gl context not found");
+}
+
 setInterval(() => {
-  const gl = canvas.getContext("webgl2");
-
-  if (!gl) {
-    throw new Error("gl context not found");
-  }
-
   const width = gl.drawingBufferWidth;
   const height = gl.drawingBufferHeight;
   const pixels = new Uint8Array(width * height * 4);
