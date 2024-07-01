@@ -11,12 +11,6 @@ const manifest = defineManifest({
     service_worker: "src/background/background.tsx",
     type: "module",
   },
-  content_scripts: [
-    {
-      matches: ["https://sushida.net/play.html"],
-      js: ["src/content/content.tsx"],
-    },
-  ],
   action: {},
   permissions: ["webNavigation", "storage", "unlimitedStorage"],
 });
