@@ -12,7 +12,7 @@ const manifest = defineManifest({
     type: "module",
   },
   action: {},
-  permissions: ["webNavigation", "storage", "unlimitedStorage"],
+  permissions: ["tabs", "webNavigation", "storage", "unlimitedStorage"],
 });
 
 // https://vitejs.dev/config/
