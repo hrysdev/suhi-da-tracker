@@ -6,37 +6,37 @@ import { LinePlot, MarkPlot } from "@mui/x-charts/LineChart";
 
 import { data } from "./Data";
 
-const DAYS = 7;
+const days = 7;
 
 // TODO: 難易度別にグラフを切り替えるために、useStateで状態を管理する。
 export default function ScoreChart() {
-  const typingOverPayment: Array<number> = Object.values(data)
-    .map((item) => item.typingOverPayment)
-    .slice(-DAYS);
-  const typingDate: Array<string> = Object.values(data)
-    .map((item) => item.typingDate)
-    .slice(-DAYS);
+  const score: Array<number> = Object.values(data)
+    .map((item) => item.score)
+    .slice(-days);
+  const date: Array<string> = Object.values(data)
+    .map((item) => item.date)
+    .slice(-days);
 
   return (
-    <Paper variant="outlined" sx={{ width: "100%", height: 550 }}>
+    <Paper variant="outlined" sx={{ width: "100%", height: 500 }}>
       <ResponsiveChartContainer
         series={[
           {
             type: "line",
-            data: typingOverPayment,
+            data: score,
           },
         ]}
         xAxis={[
           {
             scaleType: "point",
-            data: typingDate,
+            data: date,
           },
         ]}
       >
         <LinePlot />
         <MarkPlot />
-        <ChartsXAxis label="x　axis" position="bottom" />
-        <ChartsYAxis label="y axis" position="left" />
+        <ChartsXAxis position="bottom" />
+        <ChartsYAxis position="left" />
       </ResponsiveChartContainer>
     </Paper>
   );

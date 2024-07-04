@@ -2,12 +2,14 @@ import { ThemeProvider, createTheme, useMediaQuery } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import React from "react";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Main from "./components/Main";
-import Stack from "@mui/material/Stack";
+import Nav from "./components/Nav";
 
 export default function App() {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  // const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const prefersDarkMode = false;
 
   const theme = React.useMemo(
     () =>
@@ -22,11 +24,10 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Stack direction="column" sx={{ mx: 4 }}>
-        <Header />
-        <Main />
-        <Footer />
-      </Stack>
+      <Nav />
+      {/* <Header /> */}
+      <Main />
+      <Footer />
     </ThemeProvider>
   );
 }

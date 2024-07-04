@@ -5,9 +5,8 @@ export default function Footer() {
     <Typography
       component="footer"
       sx={{
-        color: "silver",
+        color: "text.secondary",
         textAlign: "center",
-        my: 4,
       }}
     >
       Copyright &copy; 2024 HrysDev.
