@@ -10,6 +10,10 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.16.0",
     "@plasmohq/storage": "^1.11.0",
     "plasmo": "0.88.0",
     "react": "18.2.0",
