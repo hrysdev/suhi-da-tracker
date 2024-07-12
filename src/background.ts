@@ -28,6 +28,8 @@ try {
           score: results[3]
         })
       }
+      const data = await chrome.storage.local.get(null)
+      console.log(data)
     }
   })
 } catch (error) {
