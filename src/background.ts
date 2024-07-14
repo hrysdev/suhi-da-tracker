@@ -1,7 +1,3 @@
-import { Storage } from "@plasmohq/storage"
-
-const storage = new Storage({ area: "local" })
-
 // XのURLから寿司打のスコアを抽出して保存する
 try {
   chrome.webNavigation.onCompleted.addListener(async (details) => {
@@ -9,27 +5,32 @@ try {
 
     if (url.indexOf("https://x.com/") > -1) {
       const decodeUrl = decodeURIComponent(url).replace(/,/g, "")
+      const date = new Date().toLocaleDateString("sv-SE")
       const results = decodeUrl
-        .match(/\d+(\.\d+)?/g)
+        .match(/\d+(\.\d+)?/g)!
         .map((result) => parseFloat(result))
 
       if (results.length === 4) {
-        await storage.set(tabId.toString(), {
-          course: results[0],
-          miss: results[3],
-          rate: results[2],
-          score: results[1]
+        await chrome.storage.local.set({
+          [tabId]: {
+            date: date,
+            course: results[0],
+            score: results[1],
+            rate: results[2],
+            miss: results[3]
+          }
         })
       } else {
-        await storage.set(tabId.toString(), {
-          course: results[0],
-          miss: results[5],
-          rate: results[4],
-          score: results[3]
+        await chrome.storage.local.set({
+          [tabId]: {
+            date: date,
+            course: results[0],
+            score: results[3],
+            rate: results[4],
+            miss: results[5]
+          }
         })
       }
-      const data = await chrome.storage.local.get(null)
-      console.log(data)
     }
   })
 } catch (error) {
