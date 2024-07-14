@@ -1,9 +1,9 @@
 ## Getting Started
 
 ```bash
-# パッケージのインストール
+# パッケージのインストール（※pnpm推奨）
 pnpm install
 
-# 開発サーバを起動（※pnpm推奨）
+# 開発サーバを起動
 pnpm dev
 ```
