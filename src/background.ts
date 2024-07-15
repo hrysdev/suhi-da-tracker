@@ -13,21 +13,21 @@ try {
       if (results.length === 4) {
         await chrome.storage.local.set({
           [tabId]: {
-            date: date,
+            cost: results[1],
             course: results[0],
-            score: results[1],
-            rate: results[2],
-            miss: results[3]
+            date: date,
+            miss: results[3],
+            rate: results[2]
           }
         })
       } else {
         await chrome.storage.local.set({
           [tabId]: {
-            date: date,
+            cost: results[3],
             course: results[0],
-            score: results[3],
-            rate: results[4],
-            miss: results[5]
+            date: date,
+            miss: results[5],
+            rate: results[4]
           }
         })
       }

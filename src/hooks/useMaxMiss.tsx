@@ -1,37 +1,33 @@
-import useFetch from "@hooks/useFetch"
+import useFetchScore from "@hooks/useFetchScore"
 import { useEffect, useState } from "react"
 
-type MaxMissType = {
-  course: number
-  score: number
-  rate: number
-  miss: number
-  date: string
-}
+import type { MaxScoreType } from "./types"
 
 const initMaxMiss = {
+  cost: 0,
   course: 0,
-  score: 0,
-  rate: 0,
+  date: "0000-00-00",
   miss: 0,
-  date: "0000-00-00"
+  rate: 0
 }
 
 export default function useMaxMiss() {
-  const [maxMiss, setMaxMiss] = useState<MaxMissType>(initMaxMiss)
-  const [data] = useFetch()
+  const [maxMiss, setMaxMiss] = useState<MaxScoreType>(initMaxMiss)
+  const [score] = useFetchScore()
 
   useEffect(() => {
     try {
       setMaxMiss(
-        Object.values(data).reduce((maxRow, currentRow) => {
-          return currentRow.miss < maxRow.miss ? currentRow : maxRow
+        Object.values(score).reduce((accumulator, currentValue) => {
+          return currentValue.miss < accumulator.miss
+            ? currentValue
+            : accumulator
         })
       )
     } catch (error) {
       console.error(error)
     }
-  }, [data])
+  }, [score])
 
   return [maxMiss]
 }

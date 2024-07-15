@@ -1,5 +1,7 @@
+import useFetchScore from "@hooks/useFetchScore"
 import Paper from "@mui/material/Paper"
 import {
+  ChartsTooltip,
   ChartsXAxis,
   ChartsYAxis,
   LinePlot,
@@ -7,35 +9,45 @@ import {
   ResponsiveChartContainer
 } from "@mui/x-charts"
 
-import { data } from "../data"
-
 export default function ScoreChart() {
-  const score: Array<number> = Object.values(data)
-    .map((item) => item.score)
-    .slice(-7)
-  const date: Array<string> = Object.values(data)
-    .map((item) => item.date)
-    .slice(-7)
+  const [score] = useFetchScore()
+
+  // 日付をKeyとして、最大スコアをValueとするオブジェクトを作成
+  const maxScore: { [key: string]: number } = {}
+  Object.entries(score).forEach((element) => {
+    const { date, cost } = element[1]
+
+    if (!maxScore[date] || maxScore[date] < cost) {
+      maxScore[date] = cost
+    }
+  })
 
   return (
-    <Paper variant="outlined" sx={{ width: "100%", height: 500 }}>
+    <Paper variant="outlined" sx={{ width: "100%", height: 550 }}>
       <ResponsiveChartContainer
         series={[
           {
             type: "line",
-            data: score
+            data: Object.values(maxScore),
+            label: "スコア"
           }
         ]}
         xAxis={[
           {
             scaleType: "point",
-            data: date
+            data: Object.keys(maxScore)
+          }
+        ]}
+        yAxis={[
+          {
+            min: 0
           }
         ]}>
         <LinePlot />
         <MarkPlot />
         <ChartsXAxis position="bottom" />
         <ChartsYAxis position="left" />
+        <ChartsTooltip />
       </ResponsiveChartContainer>
     </Paper>
   )

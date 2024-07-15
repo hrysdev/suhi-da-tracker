@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 import type { MaxScoreType } from "./types"
 
-const initMaxRate = {
+const initMaxCost = {
   cost: 0,
   course: 0,
   date: "0000-00-00",
@@ -11,15 +11,15 @@ const initMaxRate = {
   rate: 0
 }
 
-export default function useMaxRate() {
-  const [maxRate, setMaxRate] = useState<MaxScoreType>(initMaxRate)
+export default function useMaxCost() {
+  const [maxCost, setMaxCost] = useState<MaxScoreType>(initMaxCost)
   const [score] = useFetchScore()
 
   useEffect(() => {
     try {
-      setMaxRate(
+      setMaxCost(
         Object.values(score).reduce((accumulator, currentValue) => {
-          return currentValue.rate > accumulator.rate
+          return currentValue.cost > accumulator.cost
             ? currentValue
             : accumulator
         })
@@ -29,5 +29,5 @@ export default function useMaxRate() {
     }
   }, [score])
 
-  return [maxRate]
+  return [maxCost]
 }

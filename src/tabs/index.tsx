@@ -1,6 +1,6 @@
+import MaxCostCard from "@components/MaxCostCard"
 import MaxMissCard from "@components/MaxMissCard"
 import MaxRateCard from "@components/MaxRateCard"
-import MaxScoreCard from "@components/MaxScoreCard"
 import ScoreChart from "@components/ScoreChart"
 import Button from "@mui/material/Button"
 import CssBaseline from "@mui/material/CssBaseline"
@@ -18,7 +18,7 @@ export default function TabPage() {
         <CssBaseline />
         <Grid container spacing={3} sx={{ px: 8, mb: 4 }}>
           <Grid item xs={4}>
-            <MaxScoreCard />
+            <MaxCostCard />
           </Grid>
           <Grid item xs={4}>
             <MaxRateCard />
