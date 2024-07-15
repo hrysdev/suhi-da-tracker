@@ -1,4 +1,4 @@
-## Getting Started
+## 🚀 Getting Started
 
 ```bash
 # パッケージのインストール（※pnpm推奨）
