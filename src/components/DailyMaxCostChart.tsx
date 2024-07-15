@@ -9,7 +9,7 @@ import {
   ResponsiveChartContainer
 } from "@mui/x-charts"
 
-export default function ScoreChart() {
+export default function DailyMaxCostChart() {
   const [score] = useFetchScore()
 
   // 日付をKeyとして、最大スコアをValueとするオブジェクトを作成
