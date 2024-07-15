@@ -9,7 +9,7 @@ export default function MaxCostCard() {
   return (
     <Card variant="outlined" elevation={0} sx={{ textAlign: "center" }}>
       <CardContent>
-        <Typography>ベストスコア（代金）</Typography>
+        <Typography>ベストスコア（料金）</Typography>
         <Typography display="inline" sx={{ fontSize: 32 }}>
           {maxCost.cost.toLocaleString()}
         </Typography>{" "}
