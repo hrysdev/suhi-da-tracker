@@ -1,4 +1,5 @@
-import useFetch from "@hooks/useFetch"
+import { validateHeaderValue } from "http"
+import useFetchData from "@hooks/useFetchData"
 import { useEffect, useState } from "react"
 
 type MaxMissType = {
@@ -19,13 +20,15 @@ const initMaxMiss = {
 
 export default function useMaxMiss() {
   const [maxMiss, setMaxMiss] = useState<MaxMissType>(initMaxMiss)
-  const [data] = useFetch()
+  const [data] = useFetchData()
 
   useEffect(() => {
     try {
       setMaxMiss(
-        Object.values(data).reduce((maxRow, currentRow) => {
-          return currentRow.miss < maxRow.miss ? currentRow : maxRow
+        Object.values(data).reduce((accumulator, currentValue) => {
+          return currentValue.miss < accumulator.miss
+            ? currentValue
+            : accumulator
         })
       )
     } catch (error) {

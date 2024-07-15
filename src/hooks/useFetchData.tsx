@@ -20,7 +20,7 @@ const initData = {
   }
 }
 
-export default function useFetch() {
+export default function useFetchData() {
   const [data, setData] = useState<DataType>(initData)
 
   useEffect(() => {

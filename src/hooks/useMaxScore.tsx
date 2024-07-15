@@ -1,4 +1,4 @@
-import useFetch from "@hooks/useFetch"
+import useFetchData from "@hooks/useFetchData"
 import { useEffect, useState } from "react"
 
 type MaxScoreType = {
@@ -19,13 +19,15 @@ const initMaxScore = {
 
 export default function useMaxScore() {
   const [maxScore, setMaxScore] = useState<MaxScoreType>(initMaxScore)
-  const [data] = useFetch()
+  const [data] = useFetchData()
 
   useEffect(() => {
     try {
       setMaxScore(
-        Object.values(data).reduce((maxRow, currentRow) => {
-          return currentRow.score > maxRow.score ? currentRow : maxRow
+        Object.values(data).reduce((accumulator, currentValue) => {
+          return currentValue.score > accumulator.score
+            ? currentValue
+            : accumulator
         })
       )
     } catch (error) {

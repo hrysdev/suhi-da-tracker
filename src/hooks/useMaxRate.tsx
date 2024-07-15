@@ -1,4 +1,4 @@
-import useFetch from "@hooks/useFetch"
+import useFetchData from "@hooks/useFetchData"
 import { useEffect, useState } from "react"
 
 type MaxRateType = {
@@ -19,13 +19,15 @@ const initMaxRate = {
 
 export default function useMaxRate() {
   const [maxRate, setMaxRate] = useState<MaxRateType>(initMaxRate)
-  const [data] = useFetch()
+  const [data] = useFetchData()
 
   useEffect(() => {
     try {
       setMaxRate(
-        Object.values(data).reduce((maxRow, currentRow) => {
-          return currentRow.rate > maxRow.rate ? currentRow : maxRow
+        Object.values(data).reduce((accumulator, currentValue) => {
+          return currentValue.rate > accumulator.rate
+            ? currentValue
+            : accumulator
         })
       )
     } catch (error) {
