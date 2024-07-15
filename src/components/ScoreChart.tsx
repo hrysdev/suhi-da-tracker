@@ -1,4 +1,4 @@
-import useFetchData from "@hooks/useFetchData"
+import useFetchScore from "@hooks/useFetchScore"
 import Paper from "@mui/material/Paper"
 import {
   ChartsTooltip,
@@ -10,20 +10,17 @@ import {
 } from "@mui/x-charts"
 
 export default function ScoreChart() {
-  const [data] = useFetchData()
+  const [score] = useFetchScore()
 
   // 日付をKeyとして、最大スコアをValueとするオブジェクトを作成
   const maxScore: { [key: string]: number } = {}
-  Object.entries(data).forEach((element) => {
-    const { date, score } = element[1]
+  Object.entries(score).forEach((element) => {
+    const { date, cost } = element[1]
 
-    if (!maxScore[date] || maxScore[date] < score) {
-      maxScore[date] = score
+    if (!maxScore[date] || maxScore[date] < cost) {
+      maxScore[date] = cost
     }
   })
-
-  const score: Array<number> = Object.values(maxScore)
-  const date: Array<string> = Object.keys(maxScore)
 
   return (
     <Paper variant="outlined" sx={{ width: "100%", height: 550 }}>
@@ -31,14 +28,14 @@ export default function ScoreChart() {
         series={[
           {
             type: "line",
-            data: score,
+            data: Object.values(maxScore),
             label: "スコア"
           }
         ]}
         xAxis={[
           {
             scaleType: "point",
-            data: date
+            data: Object.keys(maxScore)
           }
         ]}
         yAxis={[
