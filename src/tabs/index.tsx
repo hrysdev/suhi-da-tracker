@@ -1,7 +1,7 @@
-// import MaxMissCard from "@components/MaxMissCard"
-// import MaxRateCard from "@components/MaxRateCard"
 import DailyMaxCostChart from "@components/DailyMaxCostChart"
 import MaxCostCard from "@components/MaxCostCard"
+import MaxMissCard from "@components/MaxMissCard"
+import MaxRateCard from "@components/MaxRateCard"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import MoreVertIcon from "@mui/icons-material/MoreVert"
 import AppBar from "@mui/material/AppBar"
@@ -27,7 +27,9 @@ export default function TabPage() {
           elevation={0}
           sx={{ alignItems: "end" }}>
           <Toolbar>
-            <IconButton>
+            <IconButton
+              href="https://github.com/hrysdev/suhi-da-chart"
+              target="_blank">
               <GitHubIcon />
             </IconButton>
             <IconButton>
@@ -39,12 +41,12 @@ export default function TabPage() {
           <Grid item xs={4}>
             <MaxCostCard />
           </Grid>
-          {/* <Grid item xs={4}>
+          <Grid item xs={4}>
             <MaxRateCard />
           </Grid>
           <Grid item xs={4}>
             <MaxMissCard />
-          </Grid> */}
+          </Grid>
           <Grid item xs={12}>
             <DailyMaxCostChart />
           </Grid>
