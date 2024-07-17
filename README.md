@@ -16,4 +16,4 @@ pnpm dev
 
 2. 拡張機能のアイコンをクリックすると、保存された結果が可視化できるページに遷移します。
 
-![sushida_results](https://github.com/user-attachments/assets/53b94b58-9a50-4fe2-abce-4614f000bfb0)
+<!-- ![sushida_results](https://github.com/user-attachments/assets/53b94b58-9a50-4fe2-abce-4614f000bfb0) -->
