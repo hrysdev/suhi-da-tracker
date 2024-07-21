@@ -41,7 +41,7 @@ try {
 try {
   chrome.action.onClicked.addListener(async () => {
     chrome.tabs.create({
-      url: "chrome-extension://plolmhakkepfofnfjnhaeohfhoicojha/tabs/index.html"
+      url: "chrome-extension://jdponbccdbkjdmggpbeijkipibchcklp/tabs/index.html"
     })
   })
 } catch (error) {
