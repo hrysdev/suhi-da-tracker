@@ -3,9 +3,9 @@ import MaxCostCard from "@components/MaxCostCard"
 import MaxMissCard from "@components/MaxMissCard"
 import MaxRateCard from "@components/MaxRateCard"
 import GitHubIcon from "@mui/icons-material/GitHub"
-import MoreVertIcon from "@mui/icons-material/MoreVert"
 import AppBar from "@mui/material/AppBar"
 import Button from "@mui/material/Button"
+import Container from "@mui/material/Container"
 import CssBaseline from "@mui/material/CssBaseline"
 import Grid from "@mui/material/Grid"
 import IconButton from "@mui/material/IconButton"
@@ -28,33 +28,28 @@ export default function TabPage() {
           sx={{ alignItems: "end" }}>
           <Toolbar>
             <IconButton
+              size="large"
+              color="inherit"
               href="https://github.com/hrysdev/suhi-da-chart"
               target="_blank">
-              <GitHubIcon />
-            </IconButton>
-            <IconButton>
-              <MoreVertIcon />
+              <GitHubIcon fontSize="large" />
             </IconButton>
           </Toolbar>
         </AppBar>
-        <Grid container spacing={3} sx={{ px: 11, mb: 4 }}>
-          <Grid item xs={4}>
-            <MaxCostCard />
+        <Container maxWidth="md">
+          <Grid container spacing={4}>
+            <Grid item xs={6}></Grid>
+            <Grid item xs={6}>
+              <MaxCostCard />
+            </Grid>
+            <Grid item xs={12}>
+              <DailyMaxCostChart />
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <MaxRateCard />
-          </Grid>
-          <Grid item xs={4}>
-            <MaxMissCard />
-          </Grid>
-          <Grid item xs={12}>
-            <DailyMaxCostChart />
-          </Grid>
-        </Grid>
-        <Typography textAlign="center">
-          &copy; 2024 hrysdev@gmail.com
-        </Typography>
-        <Button variant="outlined">何故かこれがないと動かない</Button>
+          <Typography textAlign="center">
+            &copy; 2024 hrysdev@gmail.com
+          </Typography>
+        </Container>
       </ThemeProvider>
     </StrictMode>
   )
