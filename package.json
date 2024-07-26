@@ -1,6 +1,6 @@
 {
   "name": "sushi-da-chart",
-  "displayName": "寿司打チャート",
+  "displayName": "寿司打トラッカー",
   "version": "0.0.1",
   "description": "🍣 寿司打のタイピングスコアから、成長を可視化する Chrome 拡張機能",
   "author": "hrysdev@gmail.com",
