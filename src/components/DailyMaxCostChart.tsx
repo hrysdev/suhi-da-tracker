@@ -1,6 +1,8 @@
 import useFetchScore from "@hooks/useFetchScore"
 import Paper from "@mui/material/Paper"
+import Typography from "@mui/material/Typography"
 import {
+  AreaPlot,
   ChartsTooltip,
   ChartsXAxis,
   ChartsYAxis,
@@ -8,6 +10,8 @@ import {
   MarkPlot,
   ResponsiveChartContainer
 } from "@mui/x-charts"
+
+const MAX_COST = 100000
 
 export default function DailyMaxCostChart() {
   const [score] = useFetchScore()
@@ -18,18 +22,20 @@ export default function DailyMaxCostChart() {
     const { date, cost } = element[1]
 
     if (!maxScore[date] || maxScore[date] < cost) {
-      maxScore[date] = cost
+      maxScore[date] = Math.min(MAX_COST, cost)
     }
   })
 
   return (
-    <Paper variant="outlined" sx={{ width: "100%", height: 550 }}>
+    <Paper variant="outlined" sx={{ width: "100%", height: 500, px: 4, py: 4 }}>
+      <Typography variant="h6">過去30日のベストスコア推移</Typography>
       <ResponsiveChartContainer
         series={[
           {
             type: "line",
             data: Object.values(maxScore),
-            label: "スコア"
+            label: "ベストスコア",
+            area: true
           }
         ]}
         xAxis={[
@@ -43,11 +49,12 @@ export default function DailyMaxCostChart() {
             min: 0
           }
         ]}>
-        <LinePlot />
-        <MarkPlot />
+        <AreaPlot />
+        <ChartsTooltip />
         <ChartsXAxis position="bottom" />
         <ChartsYAxis position="left" />
-        <ChartsTooltip />
+        <LinePlot />
+        <MarkPlot />
       </ResponsiveChartContainer>
     </Paper>
   )
