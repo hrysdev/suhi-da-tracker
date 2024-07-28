@@ -1,4 +1,4 @@
-export type ScoreType = {
+export type ResultType = {
   [key: string]: {
     cost: number
     course: number
