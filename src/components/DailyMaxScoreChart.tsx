@@ -1,4 +1,4 @@
-import useFetchScore from "@hooks/useFetchScore"
+import useFetchScore from "@hooks/useFetchResult"
 import Paper from "@mui/material/Paper"
 import Typography from "@mui/material/Typography"
 import {
@@ -13,7 +13,7 @@ import {
 
 const MAX_COST = 100000
 
-export default function DailyMaxCostChart() {
+export default function DailyMaxScoreChart() {
   const [score] = useFetchScore()
 
   // 日付をKeyとして、最大スコアをValueとするオブジェクトを作成
@@ -27,7 +27,7 @@ export default function DailyMaxCostChart() {
   })
 
   return (
-    <Paper variant="outlined" sx={{ width: "100%", height: 500, px: 4, py: 4 }}>
+    <Paper variant="outlined" sx={{ width: "100%", height: 450, px: 4, py: 4 }}>
       <Typography variant="h6">過去30日のベストスコア推移</Typography>
       <ResponsiveChartContainer
         series={[
