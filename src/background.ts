@@ -3,9 +3,11 @@ try {
   chrome.webNavigation.onCompleted.addListener(async (details) => {
     const { tabId, url } = details
 
+    chrome.storage.local.clear()
+
     if (url.indexOf("https://x.com/") > -1) {
       const decodeUrl = decodeURIComponent(url).replace(/,/g, "")
-      const date = new Date().toLocaleDateString("sv-SE")
+      const date = new Date().toLocaleString("sv-SE")
       const results = decodeUrl
         .match(/\d+(\.\d+)?/g)!
         .map((result) => parseFloat(result))
