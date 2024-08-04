@@ -12,8 +12,14 @@ import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
 import { StrictMode } from "react"
 
+import "@fontsource/noto-sans-jp/600.css"
+
 export default function TabPage() {
-  const theme = createTheme()
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Noto Sans JP"].join(",")
+    }
+  })
 
   return (
     <StrictMode>
