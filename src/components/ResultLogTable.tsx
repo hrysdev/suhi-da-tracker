@@ -6,7 +6,6 @@ import TableCell from "@mui/material/TableCell"
 import TableContainer from "@mui/material/TableContainer"
 import TableHead from "@mui/material/TableHead"
 import TableRow from "@mui/material/TableRow"
-import Typography from "@mui/material/Typography"
 
 export default function ResultLogTable() {
   const [result] = useFetchResult()
@@ -32,12 +31,7 @@ export default function ResultLogTable() {
         <TableBody>
           {rows.map((row, i) => (
             <TableRow key={i} sx={{ "&:last-child td": { border: 0 } }}>
-              {[
-                row.date,
-                row.cost.toLocaleString(),
-                row.rate.toFixed(1),
-                row.miss
-              ].map((colData, j) => (
+              {[row.date, row.cost, row.rate, row.miss].map((colData, j) => (
                 <TableCell key={j} align={j === 0 ? "left" : "right"}>
                   {colData}
                 </TableCell>
