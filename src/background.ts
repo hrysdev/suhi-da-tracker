@@ -3,8 +3,6 @@ try {
   chrome.webNavigation.onCompleted.addListener(async (details) => {
     const { tabId, url } = details
 
-    chrome.storage.local.clear()
-
     if (url.indexOf("https://x.com/") > -1) {
       const decodeUrl = decodeURIComponent(url).replace(/,/g, "")
       const date = new Date().toLocaleString("sv-SE")
@@ -25,7 +23,7 @@ try {
       } else {
         await chrome.storage.local.set({
           [tabId]: {
-            cost: results[3],
+            cost: results[3] - results[0],
             course: results[0],
             date: date,
             miss: results[5],
