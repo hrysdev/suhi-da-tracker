@@ -1,6 +1,8 @@
+## &#x1f917; Introduction
+
 工事中。
 
-## 🚀 Getting Started
+## 	&#x1f680; Getting Started
 
 ```bash
 # パッケージのインストール（※pnpm推奨）
@@ -10,7 +12,7 @@ pnpm install
 pnpm dev
 ```
 
-## 🤔 How To Use
+## &#x1f4da; Usage
 
 1. 画像のページにある「結果をXでポスト」をクリックすると、自動的にスコアやタイピング速度などの結果が拡張機能に保存されます。
 

@@ -1,4 +1,4 @@
-export type ResultType = {
+export type DataType = {
   [key: string]: {
     cost: number
     course: number
