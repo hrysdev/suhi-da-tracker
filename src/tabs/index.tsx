@@ -1,12 +1,12 @@
 import DailyMaxScoreChart from "@components/DailyMaxScoreChart"
-import ResultLogTable from "@components/ResultLogTable"
+import ScoreLogTable from "@components/ScoreLogTable"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import AppBar from "@mui/material/AppBar"
 import Button from "@mui/material/Button"
 import Container from "@mui/material/Container"
 import CssBaseline from "@mui/material/CssBaseline"
-import Grid from "@mui/material/Grid"
 import IconButton from "@mui/material/IconButton"
+import Stack from "@mui/material/Stack"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
@@ -25,10 +25,10 @@ export default function TabPage() {
     <StrictMode>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Container maxWidth="lg" sx={{ mb: 4 }}>
-          <AppBar color="transparent" position="static" elevation={0}>
+        <AppBar color="transparent" position="static" elevation={0}>
+          <Container maxWidth="lg" disableGutters>
             <Toolbar sx={{ justifyContent: "space-between" }}>
-              <Typography variant="h5">寿司打日誌（ver.0.0.1）</Typography>
+              <Typography variant="h5">寿司打トラッカー</Typography>
               <IconButton
                 size="large"
                 edge="end"
@@ -38,17 +38,17 @@ export default function TabPage() {
                 <GitHubIcon fontSize="large" />
               </IconButton>
             </Toolbar>
-          </AppBar>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <DailyMaxScoreChart />
-            </Grid>
-            <Grid item xs={12}>
-              <ResultLogTable />
-            </Grid>
-          </Grid>
+          </Container>
+        </AppBar>
+        <Container maxWidth="lg">
+          <Stack direction="column" spacing={3}>
+            <DailyMaxScoreChart />
+            <ScoreLogTable />
+          </Stack>
         </Container>
-        <Typography textAlign="center">&copy; 2024 HrysDev.</Typography>
+        <Typography textAlign="center" sx={{ my: 4 }}>
+          &copy; 2024 HrysDev.
+        </Typography>
         <Button sx={{ display: "none" }} />
       </ThemeProvider>
     </StrictMode>
