@@ -28,7 +28,9 @@ export default function TabPage() {
         <AppBar color="transparent" position="static" elevation={0}>
           <Container maxWidth="lg" disableGutters>
             <Toolbar sx={{ justifyContent: "space-between" }}>
-              <Typography variant="h5">寿司打トラッカー</Typography>
+              <Typography variant="h5">
+                寿司打トラッカー（ver 0.0.1）
+              </Typography>
               <IconButton
                 size="large"
                 edge="end"

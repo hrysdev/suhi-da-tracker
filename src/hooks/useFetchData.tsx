@@ -6,7 +6,7 @@ const initData = {
   ["0"]: {
     cost: 0,
     course: 0,
-    date: "0000-00-00",
+    dateTime: "0000-00-00",
     miss: 0,
     rate: 0
   }

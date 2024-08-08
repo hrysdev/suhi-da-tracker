@@ -2,7 +2,7 @@ export type DataType = {
   [key: string]: {
     cost: number
     course: number
-    date: string
+    dateTime: string
     miss: number
     rate: number
   }
@@ -11,7 +11,7 @@ export type DataType = {
 export type MaxScoreType = {
   cost: number
   course: number
-  date: string
+  dateTime: string
   miss: number
   rate: number
 }

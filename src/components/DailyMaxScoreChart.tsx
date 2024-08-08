@@ -19,7 +19,8 @@ export default function DailyMaxScoreChart() {
   // 日付をKeyとして、最大スコアをValueとするオブジェクトを作成
   const maxScore: { [key: string]: number } = {}
   Object.entries(score).forEach((element) => {
-    const { date, cost } = element[1]
+    const { dateTime, cost } = element[1]
+    const date = dateTime.split(" ")[0]
 
     if (!maxScore[date] || maxScore[date] < cost) {
       maxScore[date] = Math.min(MAX_COST, cost)

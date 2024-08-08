@@ -5,7 +5,7 @@ try {
 
     if (url.indexOf("https://x.com/") > -1) {
       const decodeUrl = decodeURIComponent(url).replace(/,/g, "")
-      const date = new Date().toLocaleString("sv-SE")
+      const dateTime = new Date().toLocaleString("sv-SE")
       const results = decodeUrl
         .match(/\d+(\.\d+)?/g)!
         .map((result) => parseFloat(result))
@@ -15,7 +15,7 @@ try {
           [tabId]: {
             cost: results[1],
             course: results[0],
-            date: date,
+            dateTime: dateTime,
             miss: results[3],
             rate: results[2]
           }
@@ -25,7 +25,7 @@ try {
           [tabId]: {
             cost: results[3] - results[0],
             course: results[0],
-            date: date,
+            dateTime: dateTime,
             miss: results[5],
             rate: results[4]
           }

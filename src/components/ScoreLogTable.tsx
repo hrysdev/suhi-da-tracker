@@ -60,13 +60,16 @@ export default function ScoreLogTable() {
               sx={{
                 "&:last-child td, &:last-child th": { borderRight: 0 }
               }}>
-              {[row.date, row.cost.toLocaleString(), row.rate, row.miss].map(
-                (colData, j) => (
-                  <TableCell key={j} align={j === 0 ? "left" : "right"}>
-                    {colData}
-                  </TableCell>
-                )
-              )}
+              {[
+                row.dateTime,
+                row.cost.toLocaleString(),
+                row.rate,
+                row.miss
+              ].map((colData, j) => (
+                <TableCell key={j} align={j === 0 ? "left" : "right"}>
+                  {colData}
+                </TableCell>
+              ))}
             </TableRow>
           ))}
           {emptyRows > 0 && (
