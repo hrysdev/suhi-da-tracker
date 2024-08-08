@@ -12,7 +12,7 @@ import React from "react"
 
 export default function ScoreLogTable() {
   const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(5)
+  const [rowsPerPage, setRowsPerPage] = React.useState(10)
   const [data] = useFetchData()
   const newOrderData = [...Object.values(data)].reverse()
 
@@ -87,7 +87,7 @@ export default function ScoreLogTable() {
               onRowsPerPageChange={handleChangeRowsPerPage}
               page={page}
               rowsPerPage={rowsPerPage}
-              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
+              rowsPerPageOptions={[10, 15, 25, { label: "All", value: -1 }]}
             />
           </TableRow>
         </TableFooter>
