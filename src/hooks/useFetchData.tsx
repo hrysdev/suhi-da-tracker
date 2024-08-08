@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-import type { DataType } from "./types"
+import type { DataType } from "../types"
 
 const initData = {
   ["0"]: {
