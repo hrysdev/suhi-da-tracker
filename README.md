@@ -1,6 +1,6 @@
 ## &#x1f917; Introduction
 
-工事中。
+寿司打のスコアを半自動で記録する Chrome 拡張機能。日々の積み重ねを可視化する。
 
 ## 	&#x1f680; Getting Started
 
