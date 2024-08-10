@@ -1,8 +1,8 @@
-## &#x1f917; Introduction
+## Introduction
 
 寿司打のスコアを半自動で記録する Chrome 拡張機能。日々の積み重ねを可視化する。
 
-## 	&#x1f680; Getting Started
+## Getting Started
 
 ```bash
 # パッケージのインストール（※pnpm推奨）
@@ -12,7 +12,9 @@ pnpm install
 pnpm dev
 ```
 
-## &#x1f4da; Usage
+パッケージ化されていない拡張機能を読み込むで、`build/chorme-mv3-dev`を指定する。
+
+## Usage
 
 1. 画像のページにある「結果をXでポスト」をクリックすると、自動的にスコアやタイピング速度などの結果が拡張機能に保存されます。
 
