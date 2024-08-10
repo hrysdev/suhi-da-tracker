@@ -12,7 +12,7 @@ import React from "react"
 
 export default function ScoreLogTable() {
   const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(5)
+  const [rowsPerPage, setRowsPerPage] = React.useState(10)
   const [data] = useFetchData()
   const newOrderData = [...Object.values(data)].reverse()
 
@@ -40,6 +40,7 @@ export default function ScoreLogTable() {
           <TableRow>
             {[
               "プレイ日時",
+              "プレイコース",
               "タイプスコア（円）",
               "タイプ速度（回/分）",
               "タイプミス（回）"
@@ -60,13 +61,17 @@ export default function ScoreLogTable() {
               sx={{
                 "&:last-child td, &:last-child th": { borderRight: 0 }
               }}>
-              {[row.date, row.cost.toLocaleString(), row.rate, row.miss].map(
-                (colData, j) => (
-                  <TableCell key={j} align={j === 0 ? "left" : "right"}>
-                    {colData}
-                  </TableCell>
-                )
-              )}
+              {[
+                row.dateTime,
+                row.course.toLocaleString(),
+                row.cost.toLocaleString(),
+                row.rate,
+                row.miss
+              ].map((colData, j) => (
+                <TableCell key={j} align={j === 0 ? "left" : "right"}>
+                  {colData}
+                </TableCell>
+              ))}
             </TableRow>
           ))}
           {emptyRows > 0 && (
@@ -78,13 +83,13 @@ export default function ScoreLogTable() {
         <TableFooter>
           <TableRow>
             <TablePagination
-              colSpan={4}
+              colSpan={5}
               count={newOrderData.length}
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
               page={page}
               rowsPerPage={rowsPerPage}
-              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
+              rowsPerPageOptions={[10, 15, 25, { label: "All", value: -1 }]}
             />
           </TableRow>
         </TableFooter>

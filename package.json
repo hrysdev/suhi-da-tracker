@@ -1,8 +1,8 @@
 {
-  "name": "sushi-da-nisshi",
-  "displayName": "寿司打日誌",
+  "name": "sushi-da-logger",
+  "displayName": "寿司打ログ",
   "version": "0.0.1",
-  "description": "🍣 寿司打のタイピングスコアから、成長を可視化する Chrome 拡張機能",
+  "description": "🍣 寿司打のスコアを半自動で記録する Chrome 拡張機能。日々の積み重ねを可視化する。",
   "author": "hrysdev@gmail.com",
   "scripts": {
     "dev": "plasmo dev",
