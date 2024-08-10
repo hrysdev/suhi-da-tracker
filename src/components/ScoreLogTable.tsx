@@ -40,6 +40,7 @@ export default function ScoreLogTable() {
           <TableRow>
             {[
               "プレイ日時",
+              "プレイコース",
               "タイプスコア（円）",
               "タイプ速度（回/分）",
               "タイプミス（回）"
@@ -62,6 +63,7 @@ export default function ScoreLogTable() {
               }}>
               {[
                 row.dateTime,
+                row.course.toLocaleString(),
                 row.cost.toLocaleString(),
                 row.rate,
                 row.miss
@@ -81,7 +83,7 @@ export default function ScoreLogTable() {
         <TableFooter>
           <TableRow>
             <TablePagination
-              colSpan={4}
+              colSpan={5}
               count={newOrderData.length}
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
