@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react"
 
-import type { DataType } from "../types"
+export type DataType = {
+  [key: string]: {
+    cost: number
+    course: number
+    dateTime: string
+    miss: number
+    rate: number
+  }
+}
 
 const initData = {
   ["0"]: {
